@@ -1,0 +1,587 @@
+
+/*----------FONTS---------------------
+font-family: 'Playfair Display', serif;
+font-family: 'El Messiri', sans-serif;
+font-family: 'Arima Madurai', cursive;
+font-family: 'Galada', cursive;
+font-family: 'Work Sans', sans-serif;
+------------------------------------*/
+
+
+/*                  =========                */
+/*==================Variables================*/
+/*                  =========               */
+:root{
+	--greyish : #2f2f2c ;
+	--green:#4CAF50;
+	--header_back: #00918E ;
+}
+
+
+body{
+	
+	background-color:whitesmoke;
+}
+
+/*                  ===========               */
+/*==================SITE HEADER===============*/
+/*                  ===========               */
+#site-header .navbar{
+	position: fixed;
+
+}
+
+#site-header .navbar-nav a:hover{
+	  	color: white;
+}
+
+#site-header .navbar-nav a{
+	  	font-size: 1.3rem
+}
+
+#site-header .navbar-expand-lg{
+	background-color: var(--header_back);
+font-family: 'El Messiri', sans-serif;
+	}
+
+#site-header .navbar-brand span.title_style{
+	
+	color:var(--greyish);
+	font-weight:500;
+}
+
+
+/*adjustment for small devices*/
+@media (max-width: 310px) { 
+	#site-header .navbar-toggler{
+	font-size:0.9rem;
+}
+}
+
+ /*                ============                */
+/*=================IMAGE SLIDER================*/
+/*                  ===========               */
+#image_slider  {
+	
+	margin-top:3.5rem ;
+	
+}
+
+#image_slider img{	
+	max-height:330px;
+	min-height:200px;
+}
+
+@media (max-width:319px){
+#image_slider{
+		margin-top:5.5rem;
+	}
+}
+
+ /*            =================           */
+/*=============Subscribe section===========*/	
+ /*            =================           */
+
+#opt_in {
+	font-family: 'Work Sans', sans-serif;
+	min-height:2.8rem;
+	background-color: var(--header_back);	
+}
+
+#subscribe_button { 
+	
+	background-color:var(--greyish);
+	color: white;
+	
+	
+}
+
+
+/*                  =============                     */
+/*==================CONTENT TILES=====================*/
+/*                  =============                     */
+
+
+/*flex-box style*/
+#tiles .col-12 {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+/*flex-items style*/
+#tiles .col-12 .outer {
+	margin-left:7px;
+	margin-right:7px;
+	-webkit-box-flex:1;
+	-ms-flex-positive:1;
+	flex-grow:1;
+	-ms-flex-negative: 1;
+	flex-shrink: 1;
+    -ms-flex-preferred-size: 200px;
+    flex-basis: 200px;
+	max-width:250px;
+	margin-top: 10px;
+	
+	
+}
+
+#tiles .row img{
+	width:100%;
+}
+
+#tiles .row{
+	background-color:whitesmoke;	
+}
+
+#tiles .col-12 .flip{
+	background-color:white;
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/*#tiles .col-12 > div:hover{
+	-webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
+
+
+/*=======FLIP effect for content tile=======*/
+
+#tiles .col-12 .outer{
+	perspective:600px;
+}
+
+#tiles .col-12 .flip{
+	
+	width:100%;
+	height:100%;
+	transition:transform 0.7s;
+	transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+	
+}
+
+#tiles .front {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#tiles .back {
+	
+	top: 0;
+	left:0;
+	position: absolute;
+    transform: rotateY(180deg);
+	width:100%;
+	height: 100%;
+
+	
+}
+
+#tiles .col-12 .outer:hover .flip{
+	transform: rotateY(180deg);
+}
+
+/*=======END=======*/
+
+
+
+#tiles .col-12 > div span{
+font-family: 'Work Sans', sans-serif;
+	
+}
+
+#tiles .col-12 > div > .author{
+  line-height: 0;
+        backface-visibility: 
+	font-weight: 600;
+	
+}
+
+#tiles .col-12 > div > .author-name{
+	
+	font-weight: 500;
+	color: dimgrey;
+	
+}
+
+#tiles .col-12 .back a{
+	font-size: 1.4rem;
+	padding:10px;
+   text-decoration: none;
+	color:white;
+text-align: center;
+	background-color: var(--header_back)
+	
+}
+
+/*media query for tiles size */
+@media (max-width:476px){
+#tiles .col-12 > div{	
+    -ms-flex-preferred-size: 180px;	
+    flex-basis: 180px;
+	max-width:250px;
+	margin-top: 15px;
+	padding: 10px;
+	}}
+
+
+/*                        ============                     */
+/*========================MODAL-POP UP====================>*/
+/*                        ============                     */
+
+#myModal .modal-dialog{
+	max-width:25rem;
+	
+	 margin:1rem auto auto auto;
+	
+	
+		
+}
+
+#myModal .modal-content {
+background-color: var(--header_back);	
+}
+
+#myModal input[type="email"]{
+	
+	border: 1px var(--header_back) solid;
+}
+
+#myModal input[type="email"]::-webkit-input-placeholder{
+	
+	color:var(--header_back);
+}
+
+#myModal input[type="email"]:-ms-input-placeholder{
+	
+	color:var(--header_back);
+}
+
+#myModal input[type="email"]::placeholder{
+	
+	color:var(--header_back);
+}	
+
+#myModal .input-group-prepend{
+	height: 2.5rem;	
+} 
+
+#myModal  .input-group span {
+	background-color:var(--header_back);
+	color:white;
+	border: 1px solid var(--header_back) ;
+}
+
+#myModal input[type="submit"]{
+	background-color: var(--header_back);
+}
+
+
+/*                  ===========               */
+/*==================SITE FOOTER===============*/
+/*                  ===========               */
+
+#site_footer {
+	background-color:var(--header_back) ;
+	margin-top: 15px;
+}
+
+#site_footer .row i{	
+    padding: 0.4rem;
+	font-size: 1.4rem;
+    background-color: white;
+    border-radius:50%;	
+	width:2.5rem;
+	height:2.5rem;
+}
+
+#site_footer .row a{
+	
+	text-decoration: none;
+}
+/*---icon-animation------*/
+#site_footer .row i:hover{
+	color: white;
+	-webkit-animation:spin 300ms linear;
+	animation:spin 300ms linear;
+}
+@-webkit-keyframes spin { 100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); } }
+
+
+/*----facebook------*/
+#site_footer i.fa-facebook-f{
+	color: royalblue;	
+    background-color: white;
+}
+
+#site_footer i.fa-facebook-f:hover{
+	background-color: royalblue;	
+     color: white;	
+}
+
+/*----twitter------*/
+#site_footer i.fa-twitter{
+	color: deepskyblue;
+background-color: white;
+}
+
+#site_footer i.fa-twitter:hover{
+	background-color: deepskyblue;
+	color: white;	
+}
+
+/*----youtube------*/
+#site_footer i.fa-youtube{
+	color:#FF0000;	
+    background-color: white;	
+}
+
+#site_footer i.fa-youtube:hover{
+	color:white;
+    background-color: #ff0000;	
+}
+	
+#site_footer .row p{
+	font-size: 1.4rem;
+    font-family: 'El Messiri', sans-serif;
+
+}
+
+
+/*                 ===============              */
+/*==================MEDIA QUERIES===============*/
+/*                 ===============            */
+
+
+/*
+->Extra small devices (portrait phones, less than 576px)
+->No media query since this is the default in Bootstrap
+->Small devices (landscape phones, 576px and up)
+*/
+
+@media (min-width: 576px) { 
+	#site-header  .navbar-brand{
+    font-size: 1.3rem;
+}
+	
+	#image_slider{
+		margin-top:3.5rem;
+	}
+	
+	
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	#site-header  .navbar-brand{
+    font-size: 1.5rem;
+		
+
+}	
+	
+	#image_slider{
+		margin-top:3.9rem;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	
+#site-header  .navbar-brand{
+    font-size: 2rem;
+}
+
+#image_slider{
+		margin-top:rem;
+	}
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+	
+}
+
+
+
+
+
+
+/*                   ===========              */
+/*                  =============              */
+/*                 ===============              */
+/*==================ABOUT US===============*/
+/*                 ===============            */
+/*                  =============           */
+/*                   ===========           */
+
+
+
+#about_us{
+		margin-top:3.5rem;
+	}
+
+
+@media (max-width:319px){
+#about_us{
+		margin-top:5.5rem;
+	}
+}
+
+#about_us .row >div {
+background-color: var(--header_back);
+	text-align: center;
+	color: white;
+	margin-top: 0.rem;
+		margin-bottom: 1rem
+	
+}
+
+#our_history .row > div {
+	background-color:white;
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+#our_history .row > div >p {
+	padding: 10px;
+  padding-top:0rem;
+	border-left:10px lightgrey solid;
+}
+
+
+
+/*                 ===============              */
+/*==================MEDIA QUERIES===============*/
+/*                 ===============            */
+/*====>>>>MEDIA QUERIES TO COMPENSATE THE FIXED HEADER===>>>>*/
+
+/*
+->Extra small devices (portrait phones, less than 576px)
+->No media query since this is the default in Bootstrap
+->Small devices (landscape phones, 576px and up)
+*/
+
+@media (min-width: 576px) { 
+	#about_us{
+		margin-top:3.5rem;
+	}
+	
+	
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+#about_us{
+		margin-top:3.9rem;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+#about_us{
+		margin-top:4.6rem;
+	}
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){ 
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*                   ===========              */
+/*                  =============              */
+/*                 ===============              */
+/*==================Single post===============*/
+/*                 ===============            */
+/*                  =============           */
+/*                   ===========           */
+
+
+#single_post{
+	
+}
+
+
+#single_post .row > div {
+	background-color:white;
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+	
+	
+	
+}
+
+#single_post .row > div > p{
+	
+	border-top: 2px solid black;
+	
+}
+
+
+
+#single_post .ratings:nth-last-child{
+	color: red;
+	
+	
+}
+
+
+
+
+
+
+
+/*
+====>>>>MEDIA QUERIES TO COMPENSATE THE FIXED HEADER===>>>> 
+
+->Extra small devices (portrait phones, less than 576px)
+->No media query since this is the default in Bootstrap
+->Small devices (landscape phones, 576px and up)
+*/
+
+@media (min-width: 576px) { 
+	#single_post{
+		margin-top:3.5rem;
+	}
+	
+	
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+#single_post{
+		margin-top:3.9rem;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+#single_post{
+		margin-top:4.6rem;
+	}
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){ 
+	
+	
+}
+
+
